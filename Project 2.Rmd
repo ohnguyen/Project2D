@@ -1,0 +1,133 @@
+---
+title: "Project 2"
+output: html_notebook
+---
+---
+title: "Project 2 Final"
+output: html_notebook
+---
+## **Introduction**
+
+**Background:** 5 points for background on the protein/gene/species of interest and where the data is sourced from
+
+The black perigord truffle, scientifically named *Tuber melasnosporum*, is a popular and in demand ingredient in many culinary practices in the world today. The special aromas and taste of this truffle comes from the combination of many volatile organic compounds (VOCs). However, what makes the black truffle unique is its distinct aromas that cannot be found in any other truffle species within the *Tuber* family. This makes for a highly desirable market for the truffle. Cultivation of this truffle is however difficult as it only grows in certain regions and has a long growth process. This has motivated many to attempt to mimic the aromas of the truffle, and one way is through fermentation. 
+
+Fermentation allows for a much quicker process of mimicking the aromas of the truffle fruiting body. However this process has yet be successful at replicating the exact aromas of the *Tuber melanosporum*. In order to really mimic the aromas of the actual truffle, we need to look at the volatile organic compounds, but more importantly the compositions of the different VOCs. While other truffles in the *Tuber* family posses many of the same VOCs, it is the composition of those compounds that alter the aroma of each one. 
+
+In this project, I will attempt to analyze the composition of the different *Tuber melanosporum* using RNA sequencning. With the codons identified, the amino acid count can be made. This is important as previous research has shwon that *Tuber melanosporum* is unique in that it has the highest concentration of the VOC, dimethyl sulfide, making up 57% of its odor content. Dimethyl sulfide is identified as a sulfur-contain compound, which are metabolically derived from the amino acid methionine (Met). 
+With this analysis, I will be able to identify the composition of methionine in both samples. I then will use .... to run it on the fermentation system and compare the composition of that and of the fruiting body. To plot my analysis, I will utilize..... in order to showcase the correlation between the fruiting body and the product of the fermentation process. By identifying each VOCs in the fermentation system and its composition, we can identify the major VOC that makes up the aroma of the truffle. Knowing the VOC composition probability between the fermentation system and the truffle fruting body, we can predict whether or not the fermentation product will posses a similar aroma profile as the *Tuber melanosporum*. 
+
+The data for the DNA for the *Tuber melanosporum* is from the NCBI website for the Mel28 strains of the gene. The data fro the fermentation system was derived from this article, https://www.sciencedirect.com/science/article/pii/S0308814612010989?casa_token=52W7l07KmPkAAAAA:-TFAEog0mafAA3Gc_gAlrwGVjUkHi2TaAqRRMFBF3xn-etUqFf6T7f8eSC3arpB1k8TdG1mIYA. 
+
+
+
+**Scientific Question:** 5 points for specific, measurable, and clear scientific question
+
+How could truffle fermentation systems mimic the aroma/volatiles of the actual Tuber melanosporum flirting body? 
+
+**Hypothesis:** 5 points for clear, specific, and measurable scientific hypothesis that is in the form of an if-then statement
+
+If there is one volatile organic compound that is most prominent in the *Tuber melanosporum* fruiting body, then a fermentation system product that has comparable composition of the volatile organic compounds would be able to mimic the unique aromas of the black perigord truffle. 
+
+## **Bioinformatics Analysis Method**
+5 points for description of what analyses were done and how the data was downloaded for the project
+
+Differential Expression Analysis or RNASeq was done to compare the protein transcription between the truffle fruiting body and the fermentation system. The data needed were the sequences and it was downloaded through NCBI. A heat map was done to visualize the data analysis. In order to do so, I normalized and clustered the data output from the DESeq run. I clustered it using variance stabilization tranformation and plotted it as a heat map to show correlation between the samples. 
+
+
+## **Loading in Packages**
+10 points for definition of each of the packages loaded 
+
+BiocManager: This package allows you to manage and run all the packages from the Bioconductor project for statistical analysis and comprehension of genomic data. 
+
+seqinr:This package is used for biological sequences retrieval and analysis, within this paage you can run data analysis and make data visualization of biological sequence data such as DNA and protein. 
+
+DESeq2: This package is under the larger package of Bioconductor/BiocManager. It gives you a tool for differential gene expression analysis of RNA- sequence data. You would use it to normalize, visualize and make differential analysis of high dimensional count data. 
+
+Biostrings: This package is under the larger package of Bioconductor/BiocManager. It allows for memory of string containers, string matching algorithms and manipulation of large biological sequences or sets of sequences. 
+
+
+
+5 points for correctly loading all of the packages needed and stating anything that needs to be done to load the packages (downloading the packages)
+```{r}
+# Use code below to download BiocManager
+#if (!requireNamespace("BiocManager", quietly = TRUE))
+   #install.packages("BiocManager")
+library(BiocManager) # recall package needed for analysis into notebook 
+
+# the following are packeges within BiocManager 
+library(seqinr) # recall package needed for analysis into notebook 
+library(DESeq2) # recall package needed for analysis into notebook 
+library(Biostrings) # recall package needed for analysis into notebook 
+```
+
+## **Performing Bioinformatics Analysis**
+5 points for a description each of the bioinformatics method that includes data types read in and how the method works. 
+5 points for code working correctly
+5 points for adequate commenting in the code and code checks 
+5 points for a function written that performs some part of the bioinformatics analyses
+```{r}
+#read in the sequence of the tuber melasnosporum using read.fasta() function and assign it to Tmelseq variable
+Tmelseq <- read.fasta("Tuber_melanosporum.ASM15164v1.dna.nonchromosomal.fa")
+
+#code check
+Tmelseq
+
+# Assign fragments of sequences to a vector named Codons_1
+Codons <- c("ATG", "CTG", "GAA", "TCT", "TGG")
+Codons
+
+# Organize the individual bases/characters of the DNA sequence into sets of 3 bases to later convert codons into amino acids. frame argument is set at default and word argument is set to organize in groups of 3 characters. 
+Codons <- splitseq(Tmelseq, frame = 0, word = 3)
+# print the vector again to check if the code worked
+Codons
+```
+
+
+```{r}
+# read in data from fermentation system using read.csv
+Ferm <- read.csv("fermentationsystem.csv")
+
+#make DESeqDataSet from the matrixes above
+DESeq <- DESeqDataSetFromMatrix (countData = Tmelseq, colData = Ferm, design= compound)
+
+# use DESeq function to analyse the object 
+DESeq <- DESeq(DESeq)
+
+#print out object to check code
+DESeq
+
+# assign the results of the deseq function to results variable 
+results <- results(DESeq)
+
+#call summary of the results we got from the analysis using function "summary"
+summary(results)
+```
+
+
+## **Plotting the Results**
+5 points for description of data analysis method
+
+  Heat maps are a common way to visualize results of RNA-seq. They provide expression of genes across all the samples. The map is then color coded for levels of expression and correlation between the samples. It provides a clear indication  of overlap in RNA sequencing. 
+  
+5 points for the code working for data analysis method
+5 points for adequate commenting in the code for the data analysis method
+```{r}
+# cluster the data in order to prepate for the heat map of the correlation of the data using varianceStabilizingTransformation() function 
+vsd <- varianceStabilizingTransformation(DESeq)
+
+# pull the matrix from the object mad 
+vsd_matrix <- assay(vsd)
+
+# perform pairwise correlation run and print 
+vsd_cor <- cor(vsd_matrix)
+print(vsd_cor)
+
+#make a heat map of the correlation matrix using pheatmap function 
+pheatmap(vsd_cor, annotation = select.list(DESeq, condition))
+```
+
+## **Analyzing the Results** 
+15 points for correctly analyzing the data
+
+With previous knowledge that dimethyl sulfide is the aroma causing VOC within the *Tuber melanosporum* fruiting body. In order for imitation of such aromas, it would be ideal to recreate a fermentation product that contains the same concentrations of the VOC. The results show us that the fermentation broth from the data actually posses a high but not as close of concentration of the VOC. This indicates that although the fermentation process was able to reproduce a product with the same concentrations of the indicative VOC, it has not replicated the same composition. This this proves the hypothesis in that if the concentrations were to be the same, then it would be able to mimic the aromas of the fruiting body. 
