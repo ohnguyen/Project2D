@@ -1,0 +1,80 @@
+﻿No.,RI,Compound,Mode of identification,S.I. (%),"Fermentation broth (%), medium 1","Fermentation broth (%), medium 2"
+8,683,3-Methylbut-3-en-1-ol,"MS, RI",88,0.15,_
+10,698,3-Methyl-1-butanol,"MS, RI, std",94,39.18 a,58.02 a
+11,698,2-Methyl-1-butanol,"MS, RI, std",96,4.58,3.54
+14,755,3-Methylbut-2-en-1-ol,"MS, RI",89,_,0.18
+26,900,"2,4-Dimethylpentan-3-ol","MS, RI",77,0.39 a,0.07 a
+37,1078,2-Ethylhexan-1-ol,"MS, RI",88,0.39,_
+40,1115,"2,3,6-Trimethyloct-7-en-3-ol","MS, RI",93,0.08,0.23
+43,1196,"1-Isopropylcyclohexane-1,2-diol","MS, RI",70,3.31,2.63
+45,1211,2-Methylundecan-1-ol,"MS, RI",85,0.98,0.59
+48,1227,3-Isopropyl-4-methyldec-1-en-4-ol,"MS, RI",90,0.15,0.13
+50,1240,α-Santoline alcohol,"MS, RI",76,5.97,6.79
+2,547,3-Methylbutanal,"RI, std",97,0.23,_
+3,589,2-Methylbutanal,"RI, std",88,0.2,_
+5,647,Hexanal,"MS, RI",87,_,_
+39,1089,2-Isopropyl-5-methylhex-2-enal,"MS, RI",64,0.03,0.04
+46,1212,Hexahydro-2H-naphtho[1-b]oxiren-8(8aH)-one,"MS, RI",88,0.4,0.2
+51,1247,"5,5-Dimethyl-3-(pro-1-penyl)cyclohex-2-enone",MS,70,0.47 a,0.14 a
+55,1371,"4-(3-Methylbut-2-enyl)cyclopent-4-ene-1,3-dione","MS, RI",78,0.29 a,0.09 a
+57,1601,3-Methyl-2-(pent-2-enyl)cyclopent-2-enone (jasmone),MS,73,0.73,0.37
+59,1605,"3-Methyl-2-(penta-1,3-dien-2-yl)cyclopenten-2-enone",MS,77,0.71,0.75
+61,1699,"3-Methyl-2-(penta-2,4-dienyl)cyclopent-2-enone",MS,79,0.08,0.07
+62,1708,"3-Methyl-2-(penta-1,3-dienyl)cyclopent-2-enone",MS,75,0.26,0.15
+63,1718,"4a-Methyl-4a,5,8,8a-tetrahydronaphthale-2(1H)-one",MS,86,0.23,0.11
+6,652,Ethyl propionate,"MS, RI, std",97,1.01 a,0.25 a
+7,673,Propyl acetate,"MS, RI",93,0.14,0.05
+13,737,Isobutyl acetate,"MS, RI",90,0.16,_
+18,809,Butyl acetate,"MS, RI",94,1.25,_
+24,880,Ethyl but-2-enoate,"MS, RI",83,_,0.07
+30,933,Isopentyl acetate,"MS, RI",82,1.28 a,0.32 a
+74,2559,Methyl palmitate,MS,89,_,_
+75,2720,Ethyl palmitate,MS,84,_,_
+76,2909,"Methyl octadeca-9,12-dienoate (methyl linoleate)",MS,91,_,_
+77,2910,Methyl octadec-10-enoate (methyl oleate),MS,85,_,_
+78,2988,"Ethyl octadeca-9,12-dienoate (ethyl linoleate)",MS,84,_,_
+79,2993,Ethyl octadec-10-enoate (ethyl oleate),MS,84,_,_
+56,1398,"4a-Methyl-3,4,4a,5,6,7-hexahydro-2H-chromen-2-one",MS,80,0.96,0.33
+32,955,3-Methyl butanoic acid,"MS, RI, std",84,1.88 a,0.77 a
+34,980,2-Methyl butanoic acid,"MS, RI, std",84,4.18 a,0.54 a
+67,1916,Hexadec-9-enoic acid (oleic acid),"MS, RI, std",81,_,_
+68,1923,Hexadecanoic acid (palmitic acid),"MS, RI, std",90,_,_
+69,1987,"Octadeca-9,12-dienoic acid (linoleic acid)","MS, RI, std",87,_,_
+12,717,Toluene,"MS, RI, std",85,0.42,0.41
+25,896,Ethylbenzene,"MS, RI, std",95,0.56 a,0.09 a
+31,936,o-Xylene,"MS, RI, std",91,0.58 a,0.07 a
+27,910,p-Xylene,"MS, RI, std",89,1.05,_
+33,976,Paredrine,"MS, RI",84,_,0.08
+36,1021,Benzaldehyde,"MS, RI, std",85,0.07,0.07
+38,1093,Benzeneacetaldehyde,"MS, RI",88,0.27,0.2
+41,1135,2-Phenylethanol,"MS, RI, std",94,23.05,19.32
+42,1186,Naphthalene,"MS, RI",80,_,_
+44,1197,Phenethyl acetate,"MS, RI",80,_,0.14
+54,1375,5-Methyl-2-phenylhex-2-enal,"MS, RI",70,_,_
+60,1668,"2,6-Di-tert-butyl-4-methylphenol (Butylated Hydroxy toluene)","MS, RI, std",94,_,_
+66,1889,Diisobutyl phthalate△,"MS, RI",97,0.05,0.05
+73,2645,2-Methoxyphenazin-1-amine,MS,65,_,_
+71,2542,Butylhexyl phthalate△,MS,70,_,_
+70,2120,Bis(6-methylheptyl) phthalate△,MS,94,0.45,0.05
+1,471,Dimethylsulfide,"RI, std",80,_,1.26
+17,796,Dimethyl trisulfide,"MS, RI",72,_,_
+65,1884,2-(Methylthio)benzo thiazole,"MS, RI",70,_,_
+4,593,2-Methylpyrazine,MS,82,_,_
+15,768,"2,5-Dimethylprazine",MS,91,_,0.18
+16,770,"2,6-Dimethylprazine",MS,85,_,0.22
+20,830,2-Ethyl-6-methylpyrazine,"MS, RI",83,_,0.1
+22,840,2-Ethyl-5-methylpyrazine,"MS, RI",81,_,0.1
+21,833,"2,3,5-Trimethylpyrazine","MS, RI",81,_,0.2
+29,930,"3-Ethyl-2,5-dimethylpyrazine",MS,80,_,0.17
+28,910,"2-Ethyl-3,5-dimethylpyrazine",MS,85,_,_
+35,995,"2-Ethyl-3,5,6-trimethypyrazine",MS,87,_,_
+47,1220,"2-Isopentyl-3,5-dimethylpyrazine",MS,87,_,_
+64,1710,"3,7,11-Trimethyldodeca-2,6,10-trien-1-ol (farnesol)","MS, RI",91,_,_
+49,1228,"2-Methyl-6,6-dimethylbicyclo[3.1.1]heptan-3-one (isopinocamphone)","MS, RI",74,1.33,_
+53,1363,"6,10-Dimethyl-5,9-undecadien-2-one (geranylacetone)","MS, RI, std",87,_,_
+72,2559,"6,10,14-Trimethylpentadeca-5,9,13-trien-2-one",MS,88,_,_
+9,686,"1,1-Diethoxyethane,","MS, RI",84,0.28 a,0.06 a
+58,1599,1-(3-Ethoxyprop-1-enyl)cyclohex-1-ene,MS,,0.92 a,0.12 a
+19,810,2-Methyldilhydrofuran-3(2H)-one,"MS, RI",85,_,_
+23,846,Furan-2-carbaldehyde,"MS, RI",92,0.72,0.26
+52,1248,1-Ethylidene-7a-methyloctahydro-1H-indene,"MS, RI",79,0.23,0.09
